@@ -8,21 +8,113 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../node_modules/nouislider/dist/nouislider.css">
   <title>Grandma's Toys</title>
-  <!-- <link rel='stylesheet' href='style.css'> -->
+ 
 </head>
 <body>
-  <header></header>
+  <header class="header">
+    <div class="header__container">
+    <nav class="header__navbar">
+      <a href="#" class="header__link start"></a>
+      <a href="#" class="header__link active">Игрушки</a>
+      <a href="#" class="header__link">Ёлка</a>
+    </nav>
+    <div class="header__search visible">
+      <input type="search" class="search" autocomplete="off">
+      <div class="selected">
+        <span>0</span>
+      </div>
+      </div>
+    </div>
+  </header>
     <main>
-      <section class="start-page">
+      <section class="page start-page hide">
         <title>Помогите бабушке нарядить елку</title>
         <div class="background-image">
-
-          <img src="./assets/bg.jpg" alt="bg">
         </div>
       </section>
-      <section class="toys">
-        <aside class="settings"></aside>
+      <section class="page toys-page">
+        <div class="page toys-page__wrapper">
+          <aside class="toys-page__settings">
+            <div class="value-filters">
+              <div class="value-filters__title">
+                фильтры по значению
+              </div>
+              <div class="value-filters__shape">
+                <div class="value-filters__title">
+                  форма:
+                </div>
+                <button filter = 'шар' class="ball">
+                </button>
+                <button filter = 'фигурка' class="toy">
+                </button>
+                <button  filter = 'колокольчик' class="bell">
+                </button>
+                <button  filter = 'шишка' class="cone">
+                </button>
+                <button  filter = 'снежинка' class=" snowflake">
+                </button>
+                
+              </div>
+              <div class="value-filters__color">
+                <div class="value-filters__title">
+                  цвет:
+                </div>
+                <button filter = 'белый' class="white active-btn">
+                </button>
+                <button filter = 'желтый' class=" yellow">
+                </button>
+                <button filter = 'красный' class="red">
+                </button>
+                <button filter = 'синий' class="blue">
+                </button>
+                <button filter = 'зеленый' class="green">
+                </button>
+              </div>
+              <div class="value-filters__size">
+                <div class="value-filters__title">
+                  размер:
+                </div>
+                <button filter = 'большой' class="big">
+                </button>
+                <button filter = 'средний' class="medium">
+                </button>
+                <button filter = 'малый' class="small">
+                </button>
+              </div>
+              <div class="value-filters__lovely">
+                <div class="value-filters__title">
+                  только любимые:
+                </div>
+                <button  filter = 'true' class="lovely active-btn">
+                </button>
+              </div>
+            </div>
+            <div class="range-filters">
+              <div class="value-filters__title">Количество экземпляров</div>
+              <div id="slider"></div>
+              <output class="slider-output"><span id="lower-value">1</span></output>
+              <output class="slider-output"><span id="upper-value">12</span></output>
+              <div class="value-filters__title">Годы приобретения</div>
+              <div id="slider-two"></div>
+              <output class="slider-output"><span>1940</span></output>
+              <output class="slider-output"><span>2020</span></output>
+            </div>
+            <div class="sorting">
+              <div class="value-filters__title">Сортировка</div>
+              <select class="select">
+                <option selected="" value="sort-name-max">По названию от «А» до «Я»</option>
+                <option value="sort-name-min">По названию от «Я» до «А»</option>
+                <option value="sort-count-max">По количеству по возрастанию</option>
+                <option value="sort-count-min">По количеству по убыванию</option>
+              </select>
+              <button class="reset">Сброс фильтров</button>
+            </div>
+          </aside>
+        </div>
+      
+        
       </section>
     </main>
     <footer>
@@ -58,6 +150,7 @@
            </div>
         </a>
     </footer>
-  <!-- <script src="./index.js"></script>    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"></script>
+   
 </body>
 </html>
