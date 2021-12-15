@@ -5,7 +5,6 @@ aside {
     display: grid;
     grid-template-columns: 2fr 5fr;
     justify-items: center;
-    align-items: center;
     background: rgba(22, 41, 41, 0.5);
     backdrop-filter: blur(3px);
     height: 100%;
@@ -22,7 +21,8 @@ aside {
     background-color: rgba(31, 112, 127, .3);
     backdrop-filter: blur(6px);
 }
-.value-filters__title {
+.value-filters__title,
+.title {
     display: block;
     height: 60px;
     color: #fff;
@@ -171,4 +171,99 @@ aside {
     font-size: 20px;
     font-weight: 400;
     }
+    //toys-container
     
+    .toys-page__container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100vh;
+        overflow: auto;
+        gap: 20px;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+
+  .toys_item   {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 304px;
+    height: 280px;
+    padding: 0;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1px solid #278D9F;
+    background-color: rgba(31, 112, 127, .3);
+    cursor: pointer;
+}
+   
+    img {
+        width: 90px;
+        height: 112px;
+        object-fit: contain;
+        
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+    .description {
+    width: 195px;
+    margin-top: -20px;
+    padding-left: 10px;
+    pointer-events: none;
+    color: #fff;
+    font-size: 12px;
+    }
+    .ribbon {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        position: absolute;
+      }
+      .ribbon::before,
+      .ribbon::after {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        display: block;
+        border: 5px solid #2980b9;
+      }
+      .ribbon span {
+        position: absolute;
+        display: block;
+        width: 225px;
+        padding: 15px 0;
+        background-color: #3FB8AF;
+        box-shadow: 0 5px 10px rgba(0,0,0,.1);
+      }
+      .ribbon-active span {
+        background-color: goldenrod; 
+      }
+      .ribbon-bottom-right {
+        bottom: -10px;
+        right: -10px;
+      }
+      .ribbon-bottom-right::before,
+      .ribbon-bottom-right::after {
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+      }
+      .ribbon-bottom-right::before {
+        bottom: 0;
+        left: 0;
+      }
+      .ribbon-bottom-right::after {
+        top: 0;
+        right: 0;
+      }
+      .ribbon-bottom-right span {
+        left: -25px;
+        bottom: 30px;
+        transform: rotate(-225deg);
+      }
+    }
+
