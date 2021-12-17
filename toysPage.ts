@@ -29,17 +29,8 @@ function answerLovely(){
  return answer;
 }}
 
-function countToy(){
-  for (let count = parseInt(data[2].count); count >=0 ; )
-  { if (count ==0) return;
 
-    console.log(count);
-   count -1;
-  }
-}
-countToy();
-
-function createToysContainer(): void {
+async function createToysContainer(): Promise<void> {
   if (toysContainer === null) {
     throw Error;
   } else {
@@ -64,34 +55,38 @@ function createToysContainer(): void {
       const selectedItems: string[] = [];
       toysItem.forEach((item, i) => {
         const ribbon = item.querySelector<HTMLDivElement>('.ribbon');
+        const selectedItem = data[i];
+        let count = parseInt(data[i].count);
         function addToy(){
           item.classList.toggle('selected-toy');
-          
           if (ribbon) ribbon.classList.toggle('ribbon-active');
-          const selectedItem = data[i];
           selectedItems.push(JSON.stringify(selectedItem));
           if (selectedSpan !== null) selectedSpan.innerHTML = selectedItems.length.toString();
-          console.log(selectedItems); 
-        }
+          console.log(selectedItems.length); 
+          count = selectedItems.length;
+          console.log(count);
+         }
         
         if (!isSelected) {
           item.addEventListener('click', () => {
-            addToy()
-            //countToy()
+            addToy();
+            
           }, 
           );
         } else {
           item.removeEventListener('click', () => {
             addToy();
-            //countToy()
+            
           });
-          if (ribbon && item.classList.contains('selected-toy')) {
+          if (item.classList.contains('selected-toy')) {
             item.addEventListener('click', () => {
               item.classList.toggle('selected-toy')
-              ribbon.classList.toggle('ribbon-active');
+              if (ribbon) ribbon.classList.toggle('ribbon-active');
               selectedItems.pop();
               if (selectedSpan !== null) selectedSpan.innerHTML = selectedItems.length.toString();
-              console.log(selectedItems);
+              console.log(selectedItems.length);
+              return selectedItems;
+              
             });
           }
         }
