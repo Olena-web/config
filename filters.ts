@@ -82,8 +82,9 @@ interface filterForm {
 type Key = keyof filterForm;
 
 //class Data {Array<IDataItem>};
-interface IDataItem  {
-    name: string;
+export type IDataItem = {
+    num: string;
+  name: string;
     count: string;
     year: string;
     shape: string;
@@ -91,6 +92,9 @@ interface IDataItem  {
     size: string;
     favorite: boolean;
  
+}
+export interface IData {
+ items: IDataItem[];
 }
 
 let filterForm = {
@@ -105,7 +109,7 @@ let filterForm = {
 };
 //console.log(typeof(data));
 const filters = [
-  (_data:IDataItem[] , _filterForm:filterForm) => (_filterForm.favorite ? _data.filter((obj) => obj.favorite) : data),
+  //(_data:IData , _filterForm:filterForm) => (_filterForm.favorite ? _data.filter((obj) => obj.favorite) : data),
   (_data:IDataItem[] , _filterForm:filterForm) => _data.filter((obj) => obj.name.includes(_filterForm.name)),
   (_data:IDataItem[] , _filterForm:filterForm) => _data.filter((obj) => obj.shape.includes(_filterForm.shape)),
   (_data:IDataItem[] , _filterForm:filterForm) => _data.filter((obj) => obj.year.includes(_filterForm.year)),
