@@ -68,14 +68,16 @@ changeOption();
 
 //TO-DO  filters and filterForm  must get the same argument's value
 interface filterForm {
-    num?: string;
-    name?: string;
-    count?: string;
-    year?: string;
-    shape?: string;
-    color?: string;
-    size?: string;
-    favorite?: boolean;
+    num: string;
+    name: string;
+    count: string;
+    year: string;
+    shape: string;
+    color: string;
+    size: string;
+    favorite: boolean;
+    maxYear?: string;
+    minYear?: string;
 };
 type Key = keyof filterForm;
 
@@ -88,32 +90,36 @@ interface IDataItem  {
     color: string;
     size: string;
     favorite: boolean;
+ 
 }
 
 let filterForm = {
+  num: '9',
+  name: 'Колокольчик старинный',
+  count: '2',
+  year: '1950',
+  shape: 'колокольчик',
   color: 'белый',
-  shape: 'снежинка',
   size: 'большой',
-  year: '2020',
-  favorite: 'да'
+  favorite: false,
 };
 //console.log(typeof(data));
-//const filters = [
-  //(_data , _filterForm  ) => (_filterForm.favorite ? _data.filter((obj) => obj.favorite) : data),
-  // (_data, _filterForm) => _data.filter((obj) => obj.name.includes(_filterForm.name)),
-  // (_data, _filterForm) => _data.filter((obj) => obj.shape.includes(_filterForm.shape)),
-  // (_data, _filterForm) => _data.filter((obj) => obj.year.includes(_filterForm.year)),
-  // (_data, _filterForm) => _data.filter((obj) => obj.color.includes(_filterForm.color)),
-  // (_data, _filterForm) => _data.filter((obj) => obj.size.includes(_filterForm.size)),
-  // (_data, _filterForm) => _data.filter((obj) => obj.year >= _filterForm.minYear && obj.year <= _filterForm.maxYear),
-//];
+const filters = [
+  (_data:IDataItem[] , _filterForm:filterForm) => (_filterForm.favorite ? _data.filter((obj) => obj.favorite) : data),
+  (_data:IDataItem[] , _filterForm:filterForm) => _data.filter((obj) => obj.name.includes(_filterForm.name)),
+  (_data:IDataItem[] , _filterForm:filterForm) => _data.filter((obj) => obj.shape.includes(_filterForm.shape)),
+  (_data:IDataItem[] , _filterForm:filterForm) => _data.filter((obj) => obj.year.includes(_filterForm.year)),
+  (_data:IDataItem[] , _filterForm:filterForm) => _data.filter((obj) => obj.color.includes(_filterForm.color)),
+  (_data:IDataItem[] , _filterForm:filterForm) => _data.filter((obj) => obj.size.includes(_filterForm.size)),
+  //(_data:IDataItem[] , _filterForm:filterForm) => _data.filter((obj) => obj.year >= _filterForm.minYear && obj.year <= _filterForm.maxYear),
+];
 
-// const filter = () => {
-//   let displayedItems = data;
-//   for (let i = 0; i < filters.length; i++) {
-//     displayedItems = filters[i](displayedItems, filterForm);
-//   }
-//   return displayedItems;
-// };
+const filter = () => {
+  let displayedItems = data;
+  for (let i = 0; i < filters.length; i++) {
+    displayedItems = filters[i](displayedItems, filterForm);
+  }
+  return displayedItems;
+};
 
-//console.log(filterForm.color);
+console.log(filterForm.color);
