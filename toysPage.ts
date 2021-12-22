@@ -2,12 +2,11 @@ import data from '../data';
 import { MESSAGE } from '../constants/messages.constants';
 import { COUNT, YEAR, SHAPE, COLOR, SIZE, FAVORITE } from '../constants/toysPage.constants';
 import Control from '../common/control';
-import { findFavorite } from './filters';
 export const openWindow = document.querySelector<HTMLDivElement>('.pop-up-window');
 
-const toysContainer = document.querySelector<HTMLTemplateElement>('.toys-page__container');
-const resetBtnToys = document.querySelector<HTMLButtonElement>('.reset-toys');
-const resetBtn = document.querySelector<HTMLButtonElement>('.reset');
+export const toysContainer = document.querySelector<HTMLTemplateElement>('.toys-page__container');
+export const resetBtnToys = document.querySelector<HTMLButtonElement>('.reset-toys');
+export const resetBtn = document.querySelector<HTMLButtonElement>('.reset');
 
 
 class Window extends Control {
@@ -20,7 +19,7 @@ class Window extends Control {
   }
 }
 
-function createWindow(): void {
+export function createWindow(): void {
   if (toysContainer) {
     const window = new Window(toysContainer);
     toysContainer.prepend(window.node);
@@ -46,21 +45,19 @@ export function createToysContainer(): void {
   } else {
     toysContainer.innerHTML = '';
     data.forEach((item, i) => {
-      toysContainer.innerHTML += `<div class = "toys_item">\n
+      toysContainer.innerHTML += `<div class = "toys_item ${data[i].shape}">\n
     <div class="ribbon">
       <span></span>
     </div>
     <wrapper class = "card-wrapper">
       <div class="title">${data[i].name}</div>
-      <button
-      /* .onclick = "function(){console.log('click button')}"*/ 
-      class="small minus-button"></button>
+      <button class="small minus-button"></button>
     </wrapper>  
     <img src="assets/toys/${data[i].num}.png" alt="${data[i].name}">    
     <div class = "description">
       <div class="count"> ${COUNT} ${data[i].count}</div>
       <div class="year"> ${YEAR} ${data[i].year}</div>
-      <div class="shape"> ${SHAPE} ${data[i].shape}</div>
+      <div class="${SHAPE}"> ${SHAPE} ${data[i].shape}</div>
       <div class="color">${COLOR} ${data[i].color}</div>
       <div class="size">${SIZE} ${data[i].size}</div>
       <div class="favorite">${FAVORITE} ${data[i].favorite}</div>
@@ -76,7 +73,7 @@ export function createToysContainer(): void {
         const ribbon = item.querySelector<HTMLDivElement>('.ribbon');
         const countDescr = item.querySelector<HTMLDivElement>('.count');
         let countSelectedToys = 0;
-        const maxCountToys = 5; //for test, after change to 20;
+        const maxCountToys = 20;
 
         function addToy(): void {
           if (toysCount === 0) return;
@@ -95,7 +92,7 @@ export function createToysContainer(): void {
           if (ribbon) ribbon.classList.add('ribbon-active');
           selectedItems.push(JSON.stringify(selectedItem));
           countSelectedToys = selectedItems.length;
-          console.log(selectedItems);
+
           if (selectedSpan !== null) selectedSpan.innerHTML = countSelectedToys.toString();
           if (countDescr) countDescr.innerText = `${COUNT} ${toysCount.toString()}`;
         }
@@ -107,61 +104,50 @@ export function createToysContainer(): void {
           if (countDescr !== null) countDescr.innerText = `${COUNT} ${data[i].count}`;
           selectedItems.length = 0;
           if (openWindow) {
-            console.log(openWindow.classList);
             openWindow.classList.remove('open');
           }
         }
 
         function removeToy(): void {
-          
           selectedItems.forEach((item, i) => {
             //if (toysCount === item.count );
             toysCount++;
             selectedItems.length--;
             selectedItems.toString().replace(item[i].toString(), '');
-            console.log(selectedItems);
+            //console.log(selectedItems);
             countSelectedToys = selectedItems.length;
             if (selectedSpan !== null) selectedSpan.innerHTML = countSelectedToys.toString();
             if (countDescr) countDescr.innerText = `${COUNT} ${toysCount.toString()}`;
-            if (ribbon !== null) ribbon.classList.toggle('ribbon-active');
+            if (ribbon !== null) ribbon.classList.remove('ribbon-active');
           });
         }
 
-        item.addEventListener(
-          'click',
-          (e) => {
-            if(e.target == e.currentTarget) {
-            console.log('click');
-           // e.preventDefault();
+        item.addEventListener<'click'>('click', (e: MouseEvent): void => {
+          if (e.target == e.currentTarget) {
             addToy();
-          }},
-          //{ capture: true }
-        );
+          }
+        });
         if (resetBtnToys === null) throw Error;
-        resetBtnToys.addEventListener('click', () => {
+        resetBtnToys.addEventListener<'click'>('click', () => {
           removeAllToy();
         });
         const minusBtn = document.querySelectorAll<HTMLButtonElement>('.minus-button');
         if (minusBtn !== null) {
-          minusBtn.forEach((btn:HTMLButtonElement) => {
-            if (btn !== null){
-              btn.addEventListener('click', (e)=> {
-                if(e.target == e.currentTarget)
-               {
-                removeToy();
-                 e.stopPropagation();
-              }})
-            // btn.onclick = function(e)  {
-            //   if(e.target == e.currentTarget)
-            //   {console.log('click button');
-            //    removeToy();
-            //     e.stopPropagation();
-            //   }}};
-          }}
-          )}
-      
-      })
-    }) }}
+          minusBtn.forEach((btn: HTMLButtonElement) => {
+            if (btn !== null) {
+              btn.addEventListener<'click'>('click', (e: MouseEvent): void => {
+                if (e.target == e.currentTarget) {
+                  removeToy();
+                  e.stopPropagation();
+                }
+              });
+            }
+          });
+        }
+      });
+    });
+  }
+}
 
 createToysContainer();
 

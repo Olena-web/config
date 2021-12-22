@@ -8,15 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli&display=swap">
     <link rel="stylesheet" href="../node_modules/nouislider/dist/nouislider.css">
-    <title>Grandma's Toys</title> 
+    <title>Grandma"s Toys</title> 
   </head>
   <body class="app">
     <header class="header">
       <div class="header__container">
         <nav class="header__navbar">
           <a href="#start" class="header__link start"></a>
-          <a href="#toys" class="header__link on">Игрушки</a>
+          <a href="#toys" class="header__link toys on">Игрушки</a>
           <a href="#" class="header__link">Ёлка</a>
         </nav>
         <div class="header__search visible">
@@ -44,48 +45,48 @@
                   <div class="value-filters__title">
                     форма:
                   </div>
-                  <button data-filter = 'шар' class="ball">
+                  <button data-filter = "шар" class="ball shape">
                   </button>
-                  <button data-filter = 'фигурка' class="toy">
+                  <button data-filter = "фигурка" class="toy shape">
                   </button>
-                  <button  data-filter = 'колокольчик' class="bell">
+                  <button  data-filter = "колокольчик" class="bell shape">
                   </button>
-                  <button  data-filter = 'шишка' class="cone">
+                  <button  data-filter = "шишка" class="cone shape">
                   </button>
-                  <button  data-filter = 'снежинка' class=" snowflake">
+                  <button  data-filter = "снежинка" class=" snowflake shape">
                   </button>
                 </div>
                 <div class="value-filters__color">
                   <div class="value-filters__title">
                     цвет:
                   </div>
-                  <button data-filter = 'белый' class="white active-btn">
+                  <button data-filter = "белый" class = "color white active-btn">
                   </button>
-                  <button data-filter = 'желтый' class=" yellow">
+                  <button data-filter = "желтый" class = "color yellow">
                   </button>
-                  <button data-filter = 'красный' class="red">
+                  <button data-filter = "красный" class = "color red">
                   </button>
-                  <button data-filter = 'синий' class="blue">
+                  <button data-filter = "синий" class = "color blue">
                   </button>
-                  <button data-filter = 'зеленый' class="green">
+                  <button data-filter = "зеленый" class = "color green">
                   </button>
                 </div>
                 <div class="value-filters__size">
                   <div class="value-filters__title">
                     размер:
                   </div>
-                  <button data-filter = 'большой' class="big">
+                  <button data-filter = "большой" class = "size big">
                   </button>
-                  <button data-filter = 'средний' class="medium">
+                  <button data-filter = "средний" class = "size medium">
                   </button>
-                  <button data-filter = 'малый' class="small">
+                  <button data-filter = "малый" class = "size small">
                   </button>
                 </div>
                 <div class="value-filters__lovely">
                   <div class="value-filters__title">
                     только любимые:
                   </div>
-                  <button  data-filter = 'true' class="lovely active">
+                  <button  data-filter = "true" class="lovely">
                   </button>
                 </div>
               </div>
@@ -115,6 +116,10 @@
           </div>
         </section>
         <section id = "tree" class ="page tree-page">
+          <div class="countdown-container">
+            <i class fos fa-snowflake></i>
+          </div>
+
           <div class="light-container">
 
             <ul class="lightrope">
