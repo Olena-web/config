@@ -6,10 +6,8 @@ export const openWindow = document.querySelector<HTMLDivElement>('.pop-up-window
 
 export const toysContainer = document.querySelector<HTMLTemplateElement>('.toys-page__container');
 export const resetBtnToys = document.querySelector<HTMLButtonElement>('.reset-toys');
-export const resetBtn = document.querySelector<HTMLButtonElement>('.reset');
 
-
-class Window extends Control {
+export class Window extends Control {
   constructor(parentNode: HTMLElement) {
     super(parentNode);
     const Window = new Control(this.node, 'div', 'pop-up-window', MESSAGE);
@@ -150,8 +148,3 @@ export function createToysContainer(): void {
 }
 
 createToysContainer();
-
-if (resetBtn === null) throw Error;
-resetBtn.addEventListener('click', () => {
-  window.location.reload();
-});
