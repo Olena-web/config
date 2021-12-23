@@ -10,14 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli&display=swap">
     <link rel="stylesheet" href="../node_modules/nouislider/dist/nouislider.css">
+    <script src="https://kit.fontawesome.com/67d577e478.js" crossorigin="anonymous"></script>
     <title>Grandma"s Toys</title> 
   </head>
   <body class="app">
     <header class="header">
       <div class="header__container">
         <nav class="header__navbar">
-          <a href="#start" class="header__link start"></a>
-          <a href="#toys" class="header__link toys on">Игрушки</a>
+          <a href="#start" class="header__link start on"></a>
+          <a href="#toys" class="header__link toys">Игрушки</a>
           <a href="#" class="header__link">Ёлка</a>
         </nav>
         <div class="header__search visible">
@@ -34,7 +35,7 @@
           <div class="background-image">
           </div>
         </section>
-        <section id = "toys" class = "page toys-page">
+        <section id = "toys" class = "page toys-page hide">
           <div class="page toys-page__wrapper">
             <aside class="toys-page__settings">
               <div class="value-filters">
@@ -60,26 +61,26 @@
                   <div class="value-filters__title">
                     цвет:
                   </div>
-                  <button data-filter = "белый" class = "color white active-btn">
+                  <button data-filter = "белый" class="color white active-btn">
                   </button>
-                  <button data-filter = "желтый" class = "color yellow">
+                  <button data-filter = "желтый" class="color  yellow">
                   </button>
-                  <button data-filter = "красный" class = "color red">
+                  <button data-filter = "красный" class="color red">
                   </button>
-                  <button data-filter = "синий" class = "color blue">
+                  <button data-filter = "синий" class="color blue">
                   </button>
-                  <button data-filter = "зеленый" class = "color green">
+                  <button data-filter = "зеленый" class="color green">
                   </button>
                 </div>
                 <div class="value-filters__size">
                   <div class="value-filters__title">
                     размер:
                   </div>
-                  <button data-filter = "большой" class = "size big">
+                  <button data-filter = "большой" class="size big">
                   </button>
-                  <button data-filter = "средний" class = "size medium">
+                  <button data-filter = "средний" class="size medium">
                   </button>
-                  <button data-filter = "малый" class = "size small">
+                  <button data-filter = "малый" class="size small">
                   </button>
                 </div>
                 <div class="value-filters__lovely">
@@ -115,146 +116,180 @@
             <div class="toys-page__container"></div>
           </div>
         </section>
-        <section id = "tree" class ="page tree-page">
-          <div class="countdown-container">
-            <i class fos fa-snowflake></i>
+        <section id = "tree" class ="page tree-page on">
+          <div class="tree-page__wrapper">
+            <aside class="tree-page__settings">
+              <div class="play">
+                <button class = "music">
+                </button>
+                <button class = "snow-flake">
+                </button>
+              </div>
+              <div class="menu-tree">
+                <div class="menu-tree_item">
+                  <img src="assets/tree/1.png" alt="tree1">
+                </div>
+                <div class="menu-tree_item">
+                  <img src="assets/tree/2.png" alt="tree1">
+                </div>
+                <div class="menu-tree_item">
+                  <img src="assets/tree/3.png" alt="tree1">
+                </div>
+                <div class="menu-tree_item">
+                  <img src="assets/tree/4.png" alt="tree1">
+                </div>
+                <div class="menu-tree_item">
+                  <img src="assets/tree/5.png" alt="tree1">
+                </div>
+                <div class="menu-tree_item">
+                  <img src="assets/tree/6.png" alt="tree1">
+                </div>
+              </div>
+            </aside>
+            <div class="tree-page__main">
+              <div class="countdown-container">
+                <i class fas fa-snowflake></i>
+              </div>
+    
+              <div class="light-container">
+    
+                <ul class="lightrope">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <!-- <ul class="lightrope1">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <ul class="lightrope2">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul> -->
+              </div>
+            </div>
+            <aside class="tree-page__select"></aside>
           </div>
-
-          <div class="light-container">
-
-            <ul class="lightrope">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-            <ul class="lightrope1">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-            <ul class="lightrope2">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
+         
 
         </section>
     </main>
@@ -297,5 +332,6 @@
       </a>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"></script>
+    <script src="https://kit.fontawesome.com/67d577e478.js" crossorigin="anonymous"></script>
   </body>
 </html>
