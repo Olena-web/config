@@ -1,7 +1,5 @@
-.tree-page {
-  position: absolute;
-}
-.tree-page__wrapper {
+
+  .tree-page__wrapper {
     display: grid;
     grid-template-columns: 2fr 4fr 2fr;
     justify-items: center;
@@ -9,46 +7,137 @@
     height: 100%;
     min-height: calc(100vh - 140px);
     width: 100%;
-  }
-
-  .play button {
-    width: 42px;
-    height: 42px;
-    margin: 10px 7px;
-    border: 0;
-    outline: 0;
-    background-color: transparent;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .music {
-    background-image: url("../assets/svg/audio.svg");
-}  
-  .snow-flake {
-    background-image: url("../assets/svg/snow.svg"); 
- }
-
- .menu-tree {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 100%;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  margin-bottom: 20px;
-   
- }
- .menu-tree_item {
-   position: relative;
-   width: 100px;
-   height: 100px;
-   z-index: 10;
-   img {
-     width: 100%;
+    }
+  
+    .play button {
+      width: 42px;
+      height: 42px;
+      margin: 10px 7px;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+  
+    .music {
+      background-image: url("../assets/svg/audio.svg");
+  }  
+    .snow-flake {
+      background-image: url("../assets/svg/snow.svg"); 
    }
- }
+  
+   .menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-bottom: 20px;
+   }
+
+   .menu-tree_item {
+    width: 115px;
+    height: 115px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .5);
+    background-size: auto 110px;
+		background-repeat: no-repeat;
+   }
+   .tree-page__main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url("../assets/bg/4.jpg");
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 140px);
+    min-height: 750px;
+    width: 800px;
+    padding-bottom: 20px;
+    overflow: hidden;
+   }
+
+	 .menu-tree_item:nth-child(1) {
+    background-image: url("../assets/tree/1.png");
+	 }
+
+	 .menu-tree_item:nth-child(2) {
+    background-image: url("../assets/tree/2.png");
+	 }
+
+	 .menu-tree_item:nth-child(3) {
+    background-image: url("../assets/tree/3.png");
+	 }
+
+	 .menu-tree_item:nth-child(4) {
+    background-image: url("../assets/tree/4.png");
+	 }
+
+	 .menu-tree_item:nth-child(5) {
+    background-image: url("../assets/tree/5.png");
+	 }
+
+	 .menu-tree_item:nth-child(6) {
+    background-image: url("../assets/tree/6.png");
+	 }
+
+   .menu-bg__item {
+    width: 65px;
+    height: 65px;
+    border: 1px solid #cccc;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+   }
+
+   
+   .menu-bg__item:nth-child(1) {
+    background-image: url("../assets/bg/1.jpg");
+	 }
+
+   .menu-bg__item:nth-child(2) {
+    background-image: url("../assets/bg/2.jpg");
+	 }
+
+   .menu-bg__item:nth-child(3) {
+    background-image: url("../assets/bg/3.jpg");
+	 }
+
+   .menu-bg__item:nth-child(4) {
+    background-image: url("../assets/bg/4.jpg");
+	 }
+
+   .menu-bg__item:nth-child(5) {
+    background-image: url("../assets/bg/5.jpg");
+	 }
+
+   .menu-bg__item:nth-child(6) {
+    background-image: url("../assets/bg/6.jpg");
+	 }
+
+   .menu-bg__item:nth-child(7) {
+    background-image: url("../assets/bg/7.jpg");
+	 }
+
+   .menu-bg__item:nth-child(8) {
+    background-image: url("../assets/bg/8.jpg");
+	 }
+
+   .menu-bg__item:nth-child(9) {
+    background-image: url("../assets/bg/9.jpg");
+	 }
+
+   .menu-bg__item:nth-child(10) {
+    background-image: url("../assets/bg/10.jpg");
+	 }
+
+   
